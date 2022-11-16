@@ -1,4 +1,4 @@
-package br.com.raphael.punkapp.ui.view.paging
+package br.com.raphael.punkapp.ui.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState

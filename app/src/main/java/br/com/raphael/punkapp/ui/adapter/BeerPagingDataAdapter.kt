@@ -1,4 +1,4 @@
-package br.com.raphael.punkapp.ui.view.adapter
+package br.com.raphael.punkapp.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

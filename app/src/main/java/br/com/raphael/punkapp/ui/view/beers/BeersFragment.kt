@@ -10,8 +10,8 @@ import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.raphael.punkapp.databinding.FragmentBeersBinding
 import br.com.raphael.punkapp.ui.base.BaseFragment
-import br.com.raphael.punkapp.ui.view.adapter.BeerPagingDataAdapter
-import br.com.raphael.punkapp.ui.view.viewmodel.BeersViewModel
+import br.com.raphael.punkapp.ui.adapter.BeerPagingDataAdapter
+import br.com.raphael.punkapp.ui.viewmodel.BeersViewModel
 import br.com.raphael.punkapp.util.extension.isInternetAvailable
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
