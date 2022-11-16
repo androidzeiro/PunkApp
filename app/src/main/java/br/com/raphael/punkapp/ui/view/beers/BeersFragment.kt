@@ -1,19 +1,6 @@
 package br.com.raphael.punkapp.ui.view.beers
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import br.com.raphael.punkapp.R
+import br.com.raphael.punkapp.databinding.FragmentBeersBinding
+import br.com.raphael.punkapp.ui.base.BaseFragment
 
-class BeersFragment : Fragment() {
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_beers, container, false)
-    }
-}
+class BeersFragment : BaseFragment<FragmentBeersBinding>(FragmentBeersBinding::inflate)
