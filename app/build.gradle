@@ -43,6 +43,15 @@ android {
         viewBinding = true
     }
 
+    signingConfigs {
+        signing {
+            keyAlias 'PunkApp'
+            keyPassword 'Z28m1QvXL89R'
+            storeFile file('../keystore/PunkApp.keystore')
+            storePassword 'Z28m1QvXL89R'
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
