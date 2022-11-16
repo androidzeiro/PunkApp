@@ -5,6 +5,7 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.raphael.punkapp.databinding.FragmentBeersBinding
@@ -22,7 +23,7 @@ class BeersFragment : BaseFragment<FragmentBeersBinding>(FragmentBeersBinding::i
 
     private val beersAdapter: BeerPagingDataAdapter by lazy {
         BeerPagingDataAdapter { beer ->
-            println(beer)
+            findNavController().navigate(BeersFragmentDirections.actionBeersFragmentToDetailsFragment(beer))
         }
     }
 

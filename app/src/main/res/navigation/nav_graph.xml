@@ -10,5 +10,21 @@
         android:id="@+id/beersFragment"
         android:name="br.com.raphael.punkapp.ui.view.beers.BeersFragment"
         android:label="fragment_beers"
-        tools:layout="@layout/fragment_beers" />
+        tools:layout="@layout/fragment_beers" >
+
+        <action
+            android:id="@+id/action_beersFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="br.com.raphael.punkapp.ui.view.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+
+        <argument
+            android:name="beer"
+            app:argType="br.com.raphael.punkapp.data.model.response.BeerResponse" />
+    </fragment>
 </navigation>
