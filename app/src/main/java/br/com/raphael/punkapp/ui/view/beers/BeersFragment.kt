@@ -11,6 +11,7 @@ import br.com.raphael.punkapp.databinding.FragmentBeersBinding
 import br.com.raphael.punkapp.ui.base.BaseFragment
 import br.com.raphael.punkapp.ui.view.adapter.BeerPagingDataAdapter
 import br.com.raphael.punkapp.ui.view.viewmodel.BeersViewModel
+import br.com.raphael.punkapp.util.extension.isInternetAvailable
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
@@ -45,10 +46,17 @@ class BeersFragment : BaseFragment<FragmentBeersBinding>(FragmentBeersBinding::i
     }
 
     private fun callApi() {
-        viewLifecycleOwner.lifecycleScope.launchWhenCreated {
-            beersViewModel.pagingFlow.collectLatest { pagingData ->
-                binding.progress.visibility = View.INVISIBLE
-                beersAdapter.submitData(pagingData)
+        if (requireContext().isInternetAvailable()) {
+            viewLifecycleOwner.lifecycleScope.launchWhenCreated {
+                beersViewModel.pagingFlow.collectLatest { pagingData ->
+                    binding.progress.visibility = View.INVISIBLE
+                    beersAdapter.submitData(pagingData)
+                }
+            }
+        } else {
+            binding.layoutRetry.root.isVisible = true
+            binding.layoutRetry.buttonRetry.setOnClickListener {
+                callApi()
             }
         }
     }
