@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.raphael.punkapp">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".application.PunkApplication"
         android:allowBackup="true"
